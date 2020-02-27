@@ -3,11 +3,13 @@ import { StyleSheet, Text, View, Button, TextInput, FlatList } from 'react-nativ
 
 export default function App() {
   const [enteredGoal, setEnteredGoal] = useState('')
-  const [courseGoals, setCourseGoals] = useState([])
+  const [courseGoals, setCourseGoals] = useState([{ id: '1', value: 'this default value'}])
 
   const addGoalHandler = () => {
     setCourseGoals(currentGoals => [...currentGoals, { id: Math.random().toString(), value: enteredGoal }])
   }
+
+  console.log(courseGoals)
 
   return (
     <View style={styles.screen}>
